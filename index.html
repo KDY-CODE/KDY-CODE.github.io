@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finshadow Personal Readonly</title>
+  <meta name="description" content="Finshadow Personal Readonly 只供擁有人私人使用，透過 Gmail 與 Google 試算表的唯讀授權取得銀行帳單及指定試算表，用來對帳。">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'none'; font-src 'none'; script-src 'none'; connect-src 'none'; frame-src 'none'; object-src 'none'; media-src 'none'; base-uri 'none'; form-action 'none'">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f6f4ef;
+      --paper: #fffcf7;
+      --ink: #1c1915;
+      --muted: #4e4942;
+      --line: #ddd6c8;
+      --link: #0d4f5b;
+      --mark: #1f6f5b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141311;
+        --paper: #1d1b18;
+        --ink: #f4efe6;
+        --muted: #c9c0b3;
+        --line: #3c3832;
+        --link: #8fd0dc;
+        --mark: #8ddec4;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: auto; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: system-ui, sans-serif;
+      font-size: 1.125rem;
+      line-height: 1.7;
+    }
+    a {
+      color: var(--link);
+      text-underline-offset: 0.18em;
+    }
+    a:focus-visible {
+      outline: 3px solid var(--mark);
+      outline-offset: 3px;
+    }
+    .wrap {
+      width: min(42rem, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 1.25rem 0 3rem;
+    }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem 1.5rem;
+      align-items: baseline;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 650;
+      letter-spacing: 0.01em;
+    }
+    nav a {
+      font-weight: 650;
+    }
+    main {
+      margin-top: 1.75rem;
+    }
+    .kicker {
+      margin: 0 0 0.4rem;
+      color: var(--mark);
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+    h1 {
+      margin: 0 0 0.8rem;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      margin: 2rem 0 0.6rem;
+      font-size: 1.25rem;
+      line-height: 1.35;
+    }
+    p { margin: 0.75rem 0; }
+    ul {
+      margin: 0.75rem 0;
+      padding-left: 1.2rem;
+    }
+    li + li { margin-top: 0.35rem; }
+    .panel {
+      margin-top: 1.5rem;
+      padding: 1rem 1.1rem;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 0.75rem;
+    }
+    .panel p:first-child { margin-top: 0; }
+    .panel p:last-child { margin-bottom: 0; }
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .en { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="brand">Finshadow Personal Readonly</p>
+      <nav aria-label="頁面">
+        <a href="privacy.html">隱私政策</a>
+      </nav>
+    </header>
+    <main>
+      <p class="kicker">只供擁有人私人使用</p>
+      <h1>Finshadow Personal Readonly</h1>
+      <p>Finshadow Personal Readonly 是擁有人自己的對帳工具。它透過 Gmail 與 Google 試算表的唯讀授權，取得銀行帳單，並讀取指定的試算表正本來對帳。</p>
+      <p>這個名稱與 Google 同意畫面的應用程式名稱相同。本頁是說明，不提供登入，也不連接任何金融資料。</p>
+
+      <h2>工具如何使用這些資料</h2>
+      <ul>
+        <li>僅供擁有人私人對帳，不是給其他人使用的服務。</li>
+        <li>銀行帳單透過 Gmail 的唯讀授權取得。</li>
+        <li>試算表透過 Google 試算表的唯讀授權讀取，程式邏輯只使用擁有人指定的正本。</li>
+        <li>Google 授予的讀取範圍，比程式實際採用的郵件來源與試算表更寬。實際範圍寫在隱私政策。</li>
+      </ul>
+
+      <div class="panel">
+        <p><a href="privacy.html">閱讀隱私政策</a></p>
+        <p>隱私政策說明程式在 Grok Bot 的私有雲端電腦執行、兩項 Google 唯讀權限實際能讀到什麼，以及擁有人如何撤銷授權。</p>
+      </div>
+
+      <section class="en" lang="en">
+        <h2>English</h2>
+        <p>Finshadow Personal Readonly is the owner’s private reconciliation tool. It uses read-only Gmail access for bank statements and read-only Google Sheets access for designated spreadsheet masters. This website is a static explanation only. It has no sign-in and no connection to financial records. The <a href="privacy.html">privacy policy</a> describes the Google permission scopes.</p>
+      </section>
+    </main>
+    <footer>
+      <p>靜態說明頁。沒有登入、沒有表單、沒有追蹤分析。</p>
+    </footer>
+  </div>
+</body>
+</html>
