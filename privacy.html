@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>隱私政策 · Finshadow Personal Readonly</title>
+  <meta name="description" content="Finshadow Personal Readonly 的隱私政策：說明 Gmail 與 Google 試算表唯讀權限、私人雲端執行環境，以及擁有人可停止、撤銷與刪除工作目錄。">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'none'; font-src 'none'; script-src 'none'; connect-src 'none'; frame-src 'none'; object-src 'none'; media-src 'none'; base-uri 'none'; form-action 'none'">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f6f4ef;
+      --paper: #fffcf7;
+      --ink: #1c1915;
+      --muted: #4e4942;
+      --line: #ddd6c8;
+      --link: #0d4f5b;
+      --mark: #1f6f5b;
+      --code: #f0ebe3;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141311;
+        --paper: #1d1b18;
+        --ink: #f4efe6;
+        --muted: #c9c0b3;
+        --line: #3c3832;
+        --link: #8fd0dc;
+        --mark: #8ddec4;
+        --code: #2a2723;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: system-ui, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.75;
+    }
+    a {
+      color: var(--link);
+      text-underline-offset: 0.18em;
+    }
+    a:focus-visible {
+      outline: 3px solid var(--mark);
+      outline-offset: 3px;
+    }
+    .wrap {
+      width: min(44rem, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 1.25rem 0 3.5rem;
+    }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem 1.5rem;
+      align-items: baseline;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 650;
+    }
+    nav a { font-weight: 650; }
+    main { margin-top: 1.75rem; }
+    .kicker {
+      margin: 0 0 0.4rem;
+      color: var(--mark);
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+    h1 {
+      margin: 0 0 0.75rem;
+      font-size: clamp(1.8rem, 4vw, 2.35rem);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      margin: 2.25rem 0 0.55rem;
+      font-size: 1.28rem;
+      line-height: 1.35;
+    }
+    h3 {
+      margin: 1.4rem 0 0.35rem;
+      font-size: 1.05rem;
+    }
+    p { margin: 0.7rem 0; }
+    ol, ul { margin: 0.7rem 0; padding-left: 1.25rem; }
+    li + li { margin-top: 0.35rem; }
+    code {
+      overflow-wrap: break-word;
+      font-family: ui-monospace, monospace;
+      font-size: 0.86em;
+      line-height: 1.45;
+      background: var(--code);
+      padding: 0.1em 0.35em;
+      border-radius: 0.3em;
+    }
+    .scope {
+      margin: 1rem 0;
+      padding: 0.9rem 1rem 0.2rem;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 0.75rem;
+    }
+    .scope code {
+      display: block;
+      width: fit-content;
+      max-width: 100%;
+    }
+    .dated { color: var(--muted); }
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    #english { color: inherit; }
+    #english .note { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="brand">Finshadow Personal Readonly</p>
+      <nav aria-label="頁面">
+        <a href="index.html">首頁</a>
+      </nav>
+    </header>
+    <main>
+      <p class="kicker">隱私政策</p>
+      <h1>Finshadow Personal Readonly 隱私政策</h1>
+      <p class="dated">本頁撰寫日期：2026年11月7日。內容只描述這個私人工具目前的做法。</p>
+      <p>Finshadow Personal Readonly 只供擁有人私人使用，用來對帳。本政策說明它如何透過 Google API 讀取資料、資料用在哪裡，以及擁有人可以如何停止程式並撤銷授權。</p>
+      <nav aria-label="政策章節">
+        <ol>
+          <li><a href="#where">程式在哪裡執行</a></li>
+          <li><a href="#scopes">Google 權限實際可以讀到什麼</a></li>
+          <li><a href="#use">資料用在哪裡</a></li>
+          <li><a href="#ai">必要時的 AI 協助</a></li>
+          <li><a href="#storage">存放、停止、撤銷與刪除</a></li>
+          <li><a href="#website">這個公開網站</a></li>
+          <li><a href="#english">English summary</a></li>
+        </ol>
+      </nav>
+
+      <section id="where">
+        <h2>程式在哪裡執行</h2>
+        <p>程式在 Grok Bot 的私有雲端電腦上執行，不是在擁有人家中的個人電腦上執行。讀取銀行帳單與試算表時，透過 Google API 進行。</p>
+      </section>
+
+      <section id="scopes">
+        <h2>Google 權限實際可以讀到什麼</h2>
+        <p>工具使用下面兩項唯讀權限。縮小到特定郵件來源與指定試算表的，是程式邏輯。Google 同意畫面授予的範圍比這個邏輯更寬。</p>
+
+        <div class="scope">
+          <h3>gmail.readonly</h3>
+          <p><code>https://www.googleapis.com/<wbr>auth/<wbr>gmail.readonly</code></p>
+          <p>這項授權可以讀取該 Google 帳戶信箱中的郵件。它不能寄信，也不能修改郵件。讀取範圍是信箱，不是單一寄件者，也不是單一信件。程式邏輯才把處理限制在特定來源，用來取得銀行帳單。</p>
+        </div>
+
+        <div class="scope">
+          <h3>spreadsheets.readonly</h3>
+          <p><code>https://www.googleapis.com/<wbr>auth/<wbr>spreadsheets.readonly</code></p>
+          <p>這項授權可以讀取該帳戶能夠開啟的 Google 試算表。它不能修改試算表。這不是「只能讀取單一一張試算表」的 Google 範圍。程式邏輯才把讀取限制在擁有人指定的正本。</p>
+        </div>
+
+        <p>本網站不提供、也不收取 Google 權杖。授權是否已經存在，以擁有人的 Google 帳戶顯示為準。</p>
+      </section>
+
+      <section id="use">
+        <h2>資料用在哪裡</h2>
+        <p>從 Gmail 與 Google 試算表讀到的內容，用來做擁有人自己的對帳。</p>
+        <ul>
+          <li>個人資料不公開在這個網站上。</li>
+          <li>個人資料不出售。</li>
+          <li>這些資料不用於廣告，也不用於信用評估。</li>
+          <li>透過 Google API 取得的資料，遵循 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>，包括 <a href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes">Limited Use</a> 要求。</li>
+          <li>這些資料不用於一般模型訓練。</li>
+        </ul>
+      </section>
+
+      <section id="ai">
+        <h2>必要時的 AI 協助</h2>
+        <p>為了完成對帳，必要的例外資料可能經 AI 協助處理。資料因此可能離開程式所在的私有雲端電腦，交給協助處理的一方。本政策據此說明，不把資料流寫成零外傳，也不寫成處理過程絕無第三方。</p>
+        <p>這項 AI 協助是對帳處理的一部分。Google 使用者資料不用來訓練一般模型。</p>
+      </section>
+
+      <section id="storage">
+        <h2>存放、停止、撤銷與刪除</h2>
+        <p>受限文件與憑證以私人方式存放，不放進這個公開網站或公開 repo。目前沒有公開的保留天數。本頁沒有記載已實施的安全措施、固定刪除期限或外部審核。</p>
+        <p>以目前的做法，擁有人可以：</p>
+        <ul>
+          <li>停止這個私人程式。</li>
+          <li>撤銷 Google 帳戶對本工具的授權：<a href="https://myaccount.google.com/permissions">https://myaccount.google.com/<wbr>permissions</a></li>
+          <li>刪除工作目錄。</li>
+        </ul>
+        <p>撤銷授權之後，程式不能再憑該授權呼叫 Google API。工作目錄裡已經存在的檔案，要由擁有人刪除該目錄，才會從那個工作位置移除。</p>
+      </section>
+
+      <section id="website">
+        <h2>這個公開網站</h2>
+        <p>這個網站只有靜態說明頁，由公開的 GitHub 倉庫透過 GitHub Pages 提供。頁面沒有登入、沒有表單、沒有追蹤分析、沒有 JavaScript SDK，也沒有向外部載入字型或圖片。網站不連接金融資料。</p>
+        <p>頁面檔案本身不收集輸入內容，因為頁面上沒有可以送出的欄位。GitHub Pages 仍會依主機的一般方式處理連線。本政策不把主機的連線紀錄說成不存在。</p>
+        <p>Google Search Console 的 HTML 驗證檔尚未取得，所以這個網站現在沒有放該檔案。本頁是工具說明與隱私政策，沒有宣布 Google OAuth 的發布或審查已經完成。</p>
+        <p><a href="index.html">回到首頁</a></p>
+      </section>
+
+      <section id="english" lang="en">
+        <h2>English summary</h2>
+        <p class="note">This summary states the same facts as the Traditional Chinese policy above.</p>
+        <p>Finshadow Personal Readonly is a private reconciliation tool for its owner. The program runs on Grok Bot’s private cloud computer. It does not run on the owner’s home computer. It reads data through Google APIs.</p>
+        <p><code>https://www.googleapis.com/<wbr>auth/<wbr>gmail.readonly</code> can read mail in the Gmail mailbox. It does not send or change mail. The scope is the mailbox, not one sender and not one message. Program logic is what limits processing to particular sources so the tool can obtain bank statements.</p>
+        <p><code>https://www.googleapis.com/<wbr>auth/<wbr>spreadsheets.readonly</code> can read Google Sheets spreadsheets the account can open. It does not edit them. The scope is not limited to a single spreadsheet. Program logic is what limits reading to the master copies the owner designates.</p>
+        <p>The data is used for the owner’s own reconciliation. It is not published on this website, sold, used for advertising, or used for credit assessment. Google API user data is handled under the Google API Services User Data Policy, including Limited Use, and is not used to train general models.</p>
+        <p>Where needed for reconciliation, exceptional data may be processed with AI assistance. That data may leave the private cloud computer and be handled by the party providing that assistance. This policy does not describe the flow as zero transmission or as involving no third party. AI assistance here is task processing, not general model training.</p>
+        <p>Restricted documents and credentials are stored privately and are not placed in this public website. No retention period is published. This page does not record an implemented security control, a fixed deletion deadline, or an external audit. The owner can stop the program, revoke access at <a href="https://myaccount.google.com/permissions">https://myaccount.google.com/<wbr>permissions</a>, and delete the working directory. After revocation, the program can no longer call Google APIs with that grant. Files already in the working directory are removed from that location when the owner deletes the directory.</p>
+        <p>This website is static GitHub Pages content. It has no sign-in, no forms, no analytics, no JavaScript SDK, and no external fonts or images. It does not connect to financial data. A Google Search Console HTML verification file has not been issued and is not included. This page does not state that Google OAuth publication or review is complete.</p>
+      </section>
+    </main>
+    <footer>
+      <p>Finshadow Personal Readonly · <a href="index.html">首頁</a></p>
+    </footer>
+  </div>
+</body>
+</html>
